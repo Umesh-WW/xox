@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	listenAddr := flag.String("listenaddr", ":49999", "todo")
+	listenAddr := flag.String("listenaddr", ":8080", "todo")
 	flag.Parse()
-	http.HandleFunc("/v1/create", api.HandleCreateGame)
+	http.HandleFunc("/v1/create-game", api.HandleCreateGame)
 	http.HandleFunc("v1/move", api.HandleMakeMove)
 	http.ListenAndServe(*listenAddr, nil)
 }

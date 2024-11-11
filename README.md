@@ -8,10 +8,25 @@
 
 # Release
 
-## version 1
+# data strucure
+1. user
+    -> player - x 
+    -> o -> gpt,gemine, other
+2. game
+    -> board
+        [
+            [],
+            [].
+            []
+        ]
+    -> move
+    -> state : win,lose,play,err 
+
+## version 1 - one player against Random/AI
 -  api 
-    1. v1/start - give game id
-    2. v1/move -
+    1. v1/start -ai type -> give game id, 
+    
+    2. v1/move - state,update board
 
 ## improvement node
 It is a good practice to start reading and understanding the code base of large open source projects.
