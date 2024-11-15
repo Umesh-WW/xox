@@ -10,7 +10,7 @@ import (
 	"github.com/Umesh-WW/xox/types"
 )
 
-func TestCreate(t *testing.T) {
+func TestCreateGame(t *testing.T) {
 	// Reset the games slice to ensure a clean state for each test
 
 	// Create a new HTTP request to the /create-game endpoint
@@ -21,7 +21,7 @@ func TestCreate(t *testing.T) {
 
 	// Record the HTTP response using httptest
 	recorder := httptest.NewRecorder()
-	handler := http.HandlerFunc(api.HandleCreateGame)
+	handler := http.HandlerFunc(api.MakeHttpApiHandler(api.HandleCreateGame))
 
 	// Serve the HTTP request
 	handler.ServeHTTP(recorder, req)
@@ -55,8 +55,4 @@ func TestCreate(t *testing.T) {
 		t.Errorf("expected state 'play'; got %v", game.State)
 	}
 
-	// Check that the game was added to the games slice
-	// if len(games) != 1 {
-	// 	t.Errorf("expected 1 game in games slice; got %v", len(games))
-	// }
 }
